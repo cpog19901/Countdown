@@ -1,0 +1,28 @@
+body{
+  text-align: center;
+}
+
+h1{
+  color: white;
+  letter-spacing: 20px;
+}
+
+span{
+  background-color: #076df2;
+  padding: 5px 15px;
+}
+
+#header{
+  padding-top: 5%;
+  padding-bottom: 35%;
+}
+
+.main-heading{
+  padding-bottom: 5%;
+}
+
+.btn{
+  border-radius: 0;
+  background-color: #076df2;
+  color: white;
+}
