@@ -2,6 +2,7 @@ var letterContainer = document.getElementById("letter-container");
 var enterWord = document.querySelector(".enter-word").style.visibility ="hidden";
 var submitWord = document.querySelector(".submit-word").style.visibility ="hidden";
 
+
 function pickFrom(letters) {
   if (letterContainer.innerHTML.length < 8) {
     letterContainer.innerHTML += rando(letters);
@@ -19,14 +20,10 @@ function getWord(){
   word = word.split("");
   var letterContainerFull = letterContainer.innerHTML.split("");
   if(word.length <9 ){
-
     for (var i=0; i<word.length; i++){
-
       if(letterContainerFull.includes(word[i])){
         console.log(word[i]);
-
         var letterContainerRemain =  letterContainerFull.indexOf(word[i]);
-
         letterContainerFull.splice(letterContainerRemain, 1);
 
 
@@ -52,9 +49,24 @@ function getWord(){
 }
 }
 
-function readTextFile(){
 
-}
+// $.get("text/english3.txt", function(contents){
+//   var hasString = contents.includes("Hello");
+//   console.log(hasString);
+//
+// });
+
+window.onload = function()
+{
+    if (window.jQuery)
+    {
+        alert('jQuery is loaded');
+    }
+    else
+    {
+        alert('jQuery is not loaded');
+    }
+};
 
 
 

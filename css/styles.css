@@ -1,12 +1,12 @@
 body{
   text-align: center;
   background-image: linear-gradient(to right, #40a9ff, #027ef2, #005df2);
+  margin: 1% 0;
 }
 
 h1{
   color: white;
   letter-spacing: 20px;
-  margin: 2%;
 }
 
 span{
