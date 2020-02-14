@@ -23,18 +23,40 @@
     <section id ="header">
 <h1 class ="main-heading"><span>COUNTDOWN</span></h1>
 
+<div class ="clock">
+<div class="x-axis">
+</div>
+
+<div class="y-axis">
+</div>
+
+<div class="centre-point">
+  <div class="hand">
+  </div>
+</div>
 
 
-<h2 id ="letter-container"></h2>
-<button onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
-<button onclick="pickFrom('AEIOU');">Vowel</button>
-<br>
-<br>
+
+</div>
+
+<h2 id ="letter-container"> </h2>
 
 
+
+
+
+
+
+
+<div class="letter-buttons">
+<button class ="btn btn-outline-light btn-lg"  onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
+<button class ="btn btn-outline-light btn-lg" onclick="pickFrom('AEIOU');">Vowel</button>
+</div>
+
+<div class="submission">
 <input class="enter-word" type="text"/>
-<button class="submit-word" type="button" onclick="getWord()">Submit Word</button>
-
+<button class="submit-word btn btn-outline-light btn-lg" type="button" onclick="getWord()">Submit Word</button>
+</div>
 
 </section>
 
