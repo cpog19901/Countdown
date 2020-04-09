@@ -23,7 +23,7 @@
   </head>
   <body>
     <section id ="header">
-<h1 class ="main-heading"><span>COUNTDOWN</span></h1>
+<h1 class ="main-heading"><span>C</span><span>O</span><span>U</span><span>N</span><span>T</span><span>D</span><span>O</span><span>W</span><span>N</span></h1>
 
 <div class ="clock">
 <div class="x-axis">
@@ -32,39 +32,72 @@
 <div class="y-axis">
 </div>
 
-<div class="centre-point">
-  <div class="hand">
-  </div>
+<div class="diag diag-1">
+|
 </div>
 
+<div class="diag diag-2">
+|
+</div>
+
+<div class="diag diag-3">
+|
+</div>
+
+<div class="diag diag-4">
+|
+</div>
+
+<div class="diag diag-5">
+|
+</div>
+
+<div class="diag diag-6">
+|
+</div>
+
+<div class="diag diag-7">
+|
+</div>
+
+<div class="diag diag-8">
+|
+</div>
+
+<!-- <div class="centre-point"> -->
+  <!-- <div class="hand">
+  </div> -->
+  <img class="centre-point" src="images/centre-point.svg" alt="">
+  <img class="hand-static"src="images/hand-static.svg" alt="">
+  <img class="hand-move" src="images/hand-move.svg" alt="">
+
+<!-- </div> -->
+
 
 
 </div>
 
-<h2 id ="letter-container"> </h2>
-
-
-
-
-
+<div class ="letter-container"></div>
+<div id="full-word"></div>
+<br>
 
 
 
 <div class="letter-buttons">
-<button class ="btn btn-outline-light btn-lg"  onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
-<button class ="btn btn-outline-light btn-lg" onclick="pickFrom('AEIOU');">Vowel</button>
+<button class ="con letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
+<button class =" vow letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('AEIOU');">Vowel</button>
 </div>
 
 <div class="submission">
-<input class="enter-word" type="text"/>
-<button class="submit-word btn btn-outline-light btn-lg" type="button" onclick="getWord()">Submit Word</button>
+<input class="enter-word" maxlength="8" style="text-transform: uppercase" type="text"/>
+<button class="submit-word btn btn-outline-light btn-lg" type="button">Submit Word</button>
 </div>
 
 </section>
 
 
 
-  <script type="text/javascript" src="index.js">
+  <script type="text/javascript" src="index0.js">
 
   </script>
   </body>

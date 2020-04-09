@@ -1,81 +1,50 @@
-var letterContainer = document.getElementById("letter-container");
-var enterWord = document.querySelector(".enter-word").style.visibility ="hidden";
-var submitWord = document.querySelector(".submit-word").style.visibility ="hidden";
+ //keep submission input and button hidden
+$(".submission").hide();
+
+//assigning letter container class to variable
+var letterContainer = document.querySelector(".letter-container");
+var givenLetters = document.querySelector(".letter-container").innerHTML.split();
+var inputWord = document.querySelector(".enter-word").value;
+
+function pickFrom(letters){
+
+  // if the length of the letter container is less than 8
+  if(letterContainer.innerHTML.length < 8){
+
+  //add letters to the letter container
+  letterContainer.innerHTML+=rando(letters);
+  }
+
+showSubmission();
+submitWord();
+
+}
 
 
-function pickFrom(letters) {
-  if (letterContainer.innerHTML.length < 8) {
-    letterContainer.innerHTML += rando(letters);
 
-    if(letterContainer.innerHTML.length == 8){
 
-      enterWord = document.querySelector(".enter-word").style.visibility ="visible";
-      submitWord = document.querySelector(".submit-word").style.visibility ="visible";
-    }
+
+function showSubmission(){
+
+  if(letterContainer.innerHTML.length === 8){
+    $(".submission").show();
+    $(".letter-buttons").hide();
+
   }
 }
 
-function getWord(){
-  var word = document.querySelector(".enter-word").value;
-  word = word.split("");
-  var letterContainerFull = letterContainer.innerHTML.split("");
-  if(word.length <9 ){
-    for (var i=0; i<word.length; i++){
-      if(letterContainerFull.includes(word[i])){
-        console.log(word[i]);
-        var letterContainerRemain =  letterContainerFull.indexOf(word[i]);
-        letterContainerFull.splice(letterContainerRemain, 1);
+function submitWord(){
+  if(inputWord.length <=8){
+    for (var i = 0; i < inputWord.length; i++) {
 
+      if (givenLetters.includes(inputWord[i])) {
+        var indexPosition = givenLetters.indexOf(inputWord[i]);
+        givenLetters.splice(indexPosition, 1);
+        var newWord = inputWord.join("").toLowerCase();
+        console.log(newWord);
 
-
-
-        //  console.log("This is valid");
-
-      }
-
-      else {
-
-      console.log("This is not valid");
-
-      }
-
-
-
-    }
-
-    var yourWord = word.join("");
-    console.log(yourWord);
-
+  }
 }
 }
 
-
-// $.get("text/english3.txt", function(contents){
-//   var hasString = contents.includes("Hello");
-//   console.log(hasString);
-//
-// });
-
-window.onload = function()
-{
-    if (window.jQuery)
-    {
-        alert('jQuery is loaded');
-    }
-    else
-    {
-        alert('jQuery is not loaded');
-    }
-};
-
-
-
-
-
-
-
-
-
-
-//ask the user to input a word from generated letters
-//compare word to dictionary
+}
