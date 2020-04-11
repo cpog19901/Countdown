@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css">
 
     <!-- Bootstrap Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -20,11 +23,13 @@
     <!-- jQuery -->
     <script src = "jquery-3.4.1.js"></script>
 
+
   </head>
   <body>
     <section id ="header">
-<h1 class ="main-heading"><span>C</span><span>O</span><span>U</span><span>N</span><span>T</span><span>D</span><span>O</span><span>W</span><span>N</span></h1>
 
+<h1 class ="main-heading"><span>C</span><span>O</span><span>U</span><span>N</span><span>T</span><span>D</span><span>O</span><span>W</span><span>N</span></h1>
+</section>
 <div class ="clock">
 <div class="x-axis">
 </div>
@@ -78,8 +83,10 @@
 </div>
 
 <div class ="letter-container"></div>
-<div id="full-word"></div>
+<div class="your-word">Your Word: </div>
 <br>
+
+
 
 
 
@@ -89,11 +96,16 @@
 </div>
 
 <div class="submission">
-<input class="enter-word" maxlength="8" style="text-transform: uppercase" type="text"/>
+<input class="enter-word" maxlength="8" style="text-transform: uppercase" value="Enter your word here" onfocus="this.value=''" type="text"/><br>
 <button class="submit-word btn btn-outline-light btn-lg" type="button">Submit Word</button>
 </div>
 
-</section>
+<div class="error">
+<i class="warning fas fa-exclamation-triangle"></i>
+<p class="error-text">Some letters in this word are not in your given letters!</p>
+</div>
+
+
 
 
 

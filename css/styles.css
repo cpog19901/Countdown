@@ -1,7 +1,7 @@
 body{
   text-align: center;
   background-image: linear-gradient(to right, #40a9ff, #027ef2, #005df2);
-  margin: 1% 0;
+  margin: 10% 5%;
 }
 
 h1{
@@ -14,6 +14,11 @@ span{
   padding: 5px 15px;
   border: 2px solid white;
   margin-right: 5px;
+}
+
+p{
+color: white;
+font-weight: bold;
 }
 
 
@@ -65,7 +70,7 @@ span{
   font-size: 3rem;
   color: #abadb0;
   font-weight: bold;
-  
+
 }
 
 .diag-1{
@@ -162,12 +167,12 @@ width: 30px;
 .enter-word{
   border-radius: 25px;
   padding: 15px;
-  width: 30%;
-  border: none;
+  width: 60%;
+  border: 1px ;
+  margin-bottom: 2%;
 }
 
-.letter-container{
-
+.letter-container, .your-word{
   display: block;
   width: 25%;
   position: relative;
@@ -175,6 +180,23 @@ width: 30px;
   color: white;
   padding: 2%;
   font-size: 2rem;
+}
+
+
+
+
+
+.error{
+  border: white 1px solid;
+width: 20%;
+display: inline-block;
+border-radius: 25px;
+margin-top: 2%;
+padding: 2%;
+}
+
+.warning{
+  color: white;
 }
 
 /* .full-word{

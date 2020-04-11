@@ -1,6 +1,9 @@
  //keep submission input and button hidden
  $(".submission").hide();
  $(".hand-move").hide();
+ $(".error").hide();
+ $(".your-word").hide();
+
 
  //assigning letter container class to variable
  var letterContainer = document.querySelector(".letter-container");
@@ -76,15 +79,18 @@
              console.log("Contains it: " + containsSearchTerm);
 
              if (containsSearchTerm == true) {
-               console.log("this is fully valid");
+               document.querySelector(".your-word").innerHTML += searchTerm.toUpperCase();
+               $(".your-word").show();
              } else if (containsSearchTerm == false) {
                console.log("this does not pass");
+               $(".error-text").text("This is not a valid word in the dictionary!");
+               $(".error").show();
              }
            });
          }
          //
          else if (isValid == false) {
-           console.log("This is NOT a valid word");
+           $(".error").show();
          }
 
        }
