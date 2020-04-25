@@ -1,105 +1,92 @@
- //keep submission input and button hidden
  $(".submission").hide();
  $(".hand-move").hide();
- $(".error").hide();
- $(".your-word").hide();
 
 
- //assigning letter container class to variable
- var letterContainer = document.querySelector(".letter-container");
+
+ var letterContainer = [];
+ var letterContainerLimit = 8;
+ var allGivenLetters;
+
+
+ var searchTerm = [];
+ var allLettersPass;
+ var showIndexNumber;
+var words;
+var containsSearchTerm;
+ var userWordLetter;
+ var testArray;
+ var indexPosition;
+var trueArray =[];
+ var falseArray=[];
+ var indexLetter;
+ var musicStop;
+
+
+ function play() {
+   var audio = new Audio("sounds/countdown.mp3");
+   audio.play();
+ }
+
+
+
 
  function pickFrom(letters) {
-
-   // if the length of the letter container is less than 8
-   if (letterContainer.innerHTML.length < 8) {
-
-     //add letters to the letter container
-     letterContainer.innerHTML += rando(letters);
-
-
-
+   if (letterContainer.length < letterContainerLimit) {
+     letterContainer.push(rando(letters));
+     for (i = 0; i < letterContainer.length; i++) {
+       letterBox = document.querySelector(".lb-" + i);
+       letterBox.innerHTML = letterContainer[i];
+     }
    }
-
-   //once letter container length reaches 8
-   if (letterContainer.innerHTML.length === 8) {
+   if (letterContainer.length == letterContainerLimit) {
      play();
-     $(".hand-static").hide();
      $(".hand-move").show();
-     //show submission input and button
-     $(".submission").show();
-     //remove letter buttons after 8 letters have been chosen by user
-     $(".letter-btn").hide();
+     $(".hand-static").hide();
+     allGivenLetters = letterContainer;
+     $(".submission").fadeIn();
+     $(".letter-buttons").hide();
+     var submitWord = document.querySelector(".submit-word").addEventListener("click", function() {
+       var userWordArray = document.querySelector(".enter-word").value.toUpperCase().split("");
+       for (var i = 0; i < userWordArray.length; i++) {
+         if (allGivenLetters.includes(userWordArray[i]) == true) {
+           indexPosition = allGivenLetters.indexOf(userWordArray[i]);
+           indexLetter = allGivenLetters.splice(indexPosition, 1);
+           trueArray.push(indexLetter.toString(""));
+           allLettersPass = true;
+         } else {
 
-     //assign given letters from letter container to a variable
-     var givenLetters = letterContainer.innerHTML.split("");
+           allLettersPass = false;
+         }
+       }
 
-
-     var inputWord = document.querySelector(".enter-word").value;
-
-
-
-     document.querySelector(".submit-word").addEventListener("click", function() {
-       var inputWord = document.querySelector(".enter-word").value.toUpperCase().split("");
-       if (inputWord.length <= 8) {
-
-         //
-         var isValid;
-         var searchTerm;
-
-         for (var i = 0; i < inputWord.length; i++) {
-
-           // console.log(inputWord[i]);
-
-
-           // if givenLetters includes/contains index [i] of inputWord
-           if (givenLetters.includes(inputWord[i])) {
-             //declare variable indexPosition which shows the position of index[i] in givenLetters array
-             var indexPosition = givenLetters.indexOf(inputWord[i]);
-             givenLetters.splice(indexPosition, 1);
-             searchTerm = inputWord.join("").toLowerCase();
-             isValid = true;
-
-           } else {
-
-
-             isValid = false;
-
+       if(allLettersPass ==true && trueArray.join("")===userWordArray.join("")){
+           for(i =0; i<userWordArray.length;i++){
+             document.querySelector(".letter-"+i).innerHTML = userWordArray[i];
            }
-         }
+           $.get("https://raw.githubusercontent.com/cpog19901/Countdown/master/text/english3.txt", function(contents){
+              words = contents.split("\n");
+              containsSearchTerm = words.indexOf((trueArray.join("")).toLowerCase()) >1;
+              if(containsSearchTerm==true){
+                $("<div/>").attr("class", "result").appendTo("body");
+                $("<i/>").attr("class","tick fas fa-check-square fa-2x").appendTo(".result");
+                $(".result").append("<p>This is a valid word! You scored <p>" + userWordArray.length + "<p> points<p>");
+              }
+              else{
+                $("<div/>").attr("class", "error").appendTo("body");
+                $("<i/>").attr("class","warning fas fa-exclamation-triangle fa-2x").appendTo(".error");
+                $(".error").append("<p>This is not a valid word in the dictionary!<p>");
+              }
 
-
-         if (isValid == true) {
-           console.log(searchTerm);
-           // console.log("This is a valid word");
-           var containsSearchTerm;
-
-           $.get("https://raw.githubusercontent.com/cpog19901/Countdown/master/text/english3.txt", function(contents) {
-             var words = contents.split("\n");
-             containsSearchTerm = words.indexOf(searchTerm) > -1;
-             console.log("Contains it: " + containsSearchTerm);
-
-             if (containsSearchTerm == true) {
-               document.querySelector(".your-word").innerHTML += searchTerm.toUpperCase();
-               $(".your-word").show();
-             } else if (containsSearchTerm == false) {
-               console.log("this does not pass");
-               $(".error-text").text("This is not a valid word in the dictionary!");
-               $(".error").show();
-             }
            });
-         }
-         //
-         else if (isValid == false) {
-           $(".error").show();
-         }
+
+       }
+       else{
+         $("<div/>").attr("class", "error").appendTo("body");
+         $("<i/>").attr("class","warning fas fa-exclamation-triangle fa-2x").appendTo(".error");
+         $(".error").append("<p>Some of your letters are not in your given letters!<p>");
+
 
        }
      });
-
    }
  }
-
- function play() {
-  var audio = new Audio("sounds/countdown.mp3");
-  audio.play();
-}

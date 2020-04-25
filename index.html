@@ -1,116 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Countdown</title>
 
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styles.css">
+<head>
+  <meta charset="utf-8">
+  <title>Countdown</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css">
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.1/css/all.css">
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-    <!-- Bootstrap Scripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- randojs script -->
+  <script src="https://randojs.com/1.0.0.js"></script>
 
-    <!-- randojs script -->
-    <script src="https://randojs.com/1.0.0.js"></script>
-
-    <!-- jQuery -->
-    <script src = "jquery-3.4.1.js"></script>
-
-
-  </head>
-  <body>
-    <section id ="header">
-
-<h1 class ="main-heading"><span>C</span><span>O</span><span>U</span><span>N</span><span>T</span><span>D</span><span>O</span><span>W</span><span>N</span></h1>
-</section>
-<div class ="clock">
-<div class="x-axis">
-</div>
-
-<div class="y-axis">
-</div>
-
-<div class="diag diag-1">
-|
-</div>
-
-<div class="diag diag-2">
-|
-</div>
-
-<div class="diag diag-3">
-|
-</div>
-
-<div class="diag diag-4">
-|
-</div>
-
-<div class="diag diag-5">
-|
-</div>
-
-<div class="diag diag-6">
-|
-</div>
-
-<div class="diag diag-7">
-|
-</div>
-
-<div class="diag diag-8">
-|
-</div>
-
-<!-- <div class="centre-point"> -->
-  <!-- <div class="hand">
-  </div> -->
-  <img class="centre-point" src="images/centre-point.svg" alt="">
-  <img class="hand-static"src="images/hand-static.svg" alt="">
-  <img class="hand-move" src="images/hand-move.svg" alt="">
-
-<!-- </div> -->
+  <!-- jQuery -->
+  <script src="jquery-3.4.1.js"></script>
 
 
+</head>
 
-</div>
+<body>
+  <section id="header">
+    <div class="tl-container">
+    <div class="tl">C</div>
+    <div class="tl">O</div>
+    <div class="tl">U</div>
+    <div class="tl">N</div>
+    <div class="tl">T</div>
+    <div class="tl">D</div>
+    <div class="tl">O</div>
+    <div class="tl">W</div>
+    <div class="tl">N</div>
+    </div>
+  </section>
 
-<div class ="letter-container"></div>
-<div class="your-word">Your Word: </div>
-<br>
+  <div class="clock">
+    <div class="x-axis"></div>
+    <div class="y-axis"></div>
+    <div class="diag diag-1">|</div>
+    <div class="diag diag-2">|</div>
+    <div class="diag diag-3">|</div>
+    <div class="diag diag-4">|</div>
+    <div class="diag diag-5">|</div>
+    <div class="diag diag-6">|</div>
+    <div class="diag diag-7">|</div>
+    <div class="diag diag-8">|</div>
 
+    <img class="centre-point" src="images/centre-point.svg" alt="">
+    <img class="hand-static" src="images/hand-static.svg" alt="">
+    <img class="hand-move" src="images/hand-move.svg" alt="">
+  </div>
+  <br>
 
-
-
-
-<div class="letter-buttons">
-<button class ="con letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
-<button class =" vow letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('AEIOU');">Vowel</button>
-</div>
-
-<div class="submission">
-<input class="enter-word" maxlength="8" style="text-transform: uppercase" value="Enter your word here" onfocus="this.value=''" type="text"/><br>
-<button class="submit-word btn btn-outline-light btn-lg" type="button">Submit Word</button>
-</div>
-
-<div class="error">
-<i class="warning fas fa-exclamation-triangle"></i>
-<p class="error-text">Some letters in this word are not in your given letters!</p>
-</div>
-
-
-
+  <div class="letter-board">
+    <div class="top-row">
+      <div class="letter-box lb-0"> </div>
+      <div class="letter-box lb-1"> </div>
+      <div class="letter-box lb-2"> </div>
+      <div class="letter-box lb-3"> </div>
+      <div class="letter-box lb-4"> </div>
+      <div class="letter-box lb-5"> </div>
+      <div class="letter-box lb-6"> </div>
+      <div class="letter-box lb-7"> </div>
+    </div>
+    <div class="bottom-row">
+      <div class="user-word letter-0"></div>
+      <div class="user-word letter-1"></div>
+      <div class="user-word letter-2"></div>
+      <div class="user-word letter-3"></div>
+      <div class="user-word letter-4"></div>
+      <div class="user-word letter-5"></div>
+      <div class="user-word letter-6"></div>
+      <div class="user-word letter-7"></div>
+    </div>
+  </div>
+  <div class="letter-buttons">
+    <button class="con letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
+    <button class=" vow letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('AEIOU');">Vowel</button>
+  </div>
+  <div class="submission">
+    <input class="enter-word" maxlength="8" style="text-transform: uppercase" value="Enter your word here" onfocus="this.value=''" type="text" /><br>
+    <button class="submit-word btn btn-outline-light btn-lg" type="button">Submit Word</button>
+  </div>
 
 
   <script type="text/javascript" src="index0.js">
 
   </script>
-  </body>
+</body>
+
 </html>
