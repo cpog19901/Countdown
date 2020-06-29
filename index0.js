@@ -1,5 +1,3 @@
-alert("meow");
-
  $(".submission").hide();
  $(".hand-move").hide();
 $(".message-time").hide();
