@@ -22,7 +22,6 @@
   <!-- jQuery -->
   <script src="jquery-3.4.1.js"></script>
 
-
 </head>
 
 <body>
@@ -39,6 +38,12 @@
     <div class="tl">N</div>
     </div>
   </section>
+
+
+<div class="game-container">
+  <div class="message-time">
+    <h1>Time is Up!</h1>
+  </div>
 
   <div class="clock">
     <div class="x-axis"></div>
@@ -81,13 +86,15 @@
     </div>
   </div>
   <div class="letter-buttons">
-    <button class="con letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">Consonant</button>
-    <button class=" vow letter-btn btn btn-outline-light btn-lg" onclick="pickFrom('AEIOU');">Vowel</button>
+    <button class="con letter-btn btn btn-outline-light btn-lg pick-button" onclick="pickFrom('BCDFGHJKLMNPQRSTVWXYZ');">CONSONANT</button>
+    <button class=" vow letter-btn btn btn-outline-light btn-lg pick-button" onclick="pickFrom('AEIOU');">VOWEL</button>
   </div>
   <div class="submission">
     <input class="enter-word" maxlength="8" style="text-transform: uppercase" value="Enter your word here" onfocus="this.value=''" type="text" /><br>
-    <button class="submit-word btn btn-outline-light btn-lg" type="button">Submit Word</button>
+    <button class="submit-word btn btn-outline-light btn-lg" type="button">SUBMIT WORD</button>
   </div>
+</div>
+
 
 
   <script type="text/javascript" src="index0.js">

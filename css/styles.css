@@ -1,6 +1,8 @@
 body{
   text-align: center;
-  background-image: linear-gradient(to right, #40a9ff, #027ef2, #005df2);
+  background-image: url("C:/Users/Ciaran/Desktop/Countdown/images/countdown-bg.svg");
+  background-repeat: repeat;
+  background-size: cover;
   margin: 5% 5%;
 }
 
@@ -25,8 +27,7 @@ h1{
   height: 75px;
   color: white;
   font-weight: bold;
-  vertical-align: top;
-
+  padding-top: 8px;
 }
 
 span{
@@ -100,44 +101,44 @@ font-size: 1.5rem;
 }
 
 .diag-1{
-  -ms-transform: rotate(22.5deg); /* IE 9 */
-  transform: rotate(22.5deg); /* Standard syntax */
+  -ms-transform: rotate(30deg); /* IE 9 */
+  transform: rotate(30deg); /* Standard syntax */
 
 }
 
 .diag-2{
-  -ms-transform: rotate(67.5deg); /* IE 9 */
-  transform: rotate(67.5deg); /* Standard syntax */
+  -ms-transform: rotate(60deg); /* IE 9 */
+  transform: rotate(60deg); /* Standard syntax */
 }
 
 .diag-3{
-  -ms-transform: rotate(112.5deg); /* IE 9 */
-  transform: rotate(112.5deg); /* Standard syntax */
+  -ms-transform: rotate(120deg); /* IE 9 */
+  transform: rotate(120deg); /* Standard syntax */
 }
 
 .diag-4{
-  -ms-transform: rotate(157.5deg); /* IE 9 */
-  transform: rotate(157.5deg); /* Standard syntax */
+  -ms-transform: rotate(150deg); /* IE 9 */
+  transform: rotate(150deg); /* Standard syntax */
 }
 
 .diag-5{
-  -ms-transform: rotate(202.5deg); /* IE 9 */
-  transform: rotate(202.5deg); /* Standard syntax */
+  -ms-transform: rotate(210deg); /* IE 9 */
+  transform: rotate(210deg); /* Standard syntax */
 }
 
 .diag-6{
-  -ms-transform: rotate(247.5deg); /* IE 9 */
-  transform: rotate(247.5deg); /* Standard syntax */
+  -ms-transform: rotate(240deg); /* IE 9 */
+  transform: rotate(240deg); /* Standard syntax */
 }
 
 .diag-7{
-  -ms-transform: rotate(292.5deg); /* IE 9 */
-  transform: rotate(292.5deg); /* Standard syntax */
+  -ms-transform: rotate(300deg); /* IE 9 */
+  transform: rotate(300deg); /* Standard syntax */
 }
 
 .diag-8{
-  -ms-transform: rotate(337.5deg); /* IE 9 */
-  transform: rotate(337.5deg); /* Standard syntax */
+  -ms-transform: rotate(330deg); /* IE 9 */
+  transform: rotate(330deg); /* Standard syntax */
 }
 
 .centre-point{
@@ -179,13 +180,12 @@ width: 30px;
 
   width: 800px;
   height: 800px;
-  background-color: green;
   margin: 0;
   padding-top: 8%;
 }
 
 .letter-btn{
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-top: 7%;
   padding: 1% 2%;
 }
@@ -198,8 +198,14 @@ width: 30px;
   width: 60%;
   border: 1px;
   margin: 2% 0;
-  color: #076df2;
+  color: black;
   font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.submit-word{
+  font-size: 1.5rem;
+  padding: 1% 2%;
 }
 
 .letter-container, .your-word{
@@ -211,7 +217,6 @@ width: 30px;
   padding: 2%;
   font-size: 2rem;
   margin-bottom: 8%;
-
 }
 
 .test{
@@ -221,15 +226,17 @@ width: 30px;
 
 .error, .result{
   border: white 1px solid;
-width: 20%;
+width: 50%;
 display: inline-block;
 border-radius: 25px;
 margin-top: 2%;
-padding: 2%;
+padding: 4%;
+background-color: #0c27f2;
 }
 
 .warning{
   color: white;
+  padding-bottom: 3%;
 }
 
 .test{
@@ -270,14 +277,26 @@ padding: 2%;
   margin: 5px;
 }
 
-
-
-.con{
-
-  left:0;
+.con, .vow, .submit-word{
+  border: 4px solid black;
+  background-color: #0c27f2;
+  font-weight: bold;
+  margin-bottom: 4%;
 }
 
-.vow{
+.message-time{
+  background-color: white;
+  border-radius: 25px;
+  padding: 6%;
+  left:50%;
+  top: 25%;
+  transform: translateX(-50%);
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  border: 2px solid #0c27f2;
+}
 
-  right: 0;
+.message-time h1{
+  color: #0c27f2;
 }
